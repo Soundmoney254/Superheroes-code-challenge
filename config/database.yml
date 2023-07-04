@@ -81,6 +81,7 @@ test:
 #
 production:
   <<: *default
-  database: superhero_production
-  username: superhero
+  host: dpg-cihuo0l9aq012eog39dg-a
+  database: bucketlist_p8o3
+  username: soundmoney254
   password: <%= ENV["SUPERHERO_DATABASE_PASSWORD"] %>
