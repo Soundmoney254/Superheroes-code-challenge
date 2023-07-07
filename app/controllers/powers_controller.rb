@@ -1,40 +1,49 @@
 class PowersController < ApplicationController
-    # GET /powers
-    def index
-      powers = Power.all
-      render json: powers
+  rescue_from ActiveRecord::RecordNotFound, with: :handle_not_found
+  rescue_from ActiveRecord::RecordInvalid, with: :handle_validation_error
+
+  def index
+    powers = Power.all
+    render json: powers
+  end
+
+  def show
+    power = Power.find_by(id: params[:id])
+
+    if power
+      render json: power
+    else
+      render json: { error: 'Power not found' }, status: :not_found
     end
+  end
+
+  def update
+    power = Power.find_by(id: params[:id])
   
-    # GET /powers/:id
-    def show
-      power = Power.find_by(id: params[:id])
-  
-      if power
-        render json: power
+    if power
+      if power.update(power_params)
+        render json: power, status: :ok
       else
-        render json: { error: 'Power not found' }, status: :not_found
+        render json: { errors: power.errors.full_messages }, status: :unprocessable_entity
       end
+    else
+      render json: { error: 'Power not found' }, status: :not_found
     end
-  
-    # PATCH /powers/:id
-    def update
-      power = Power.find_by(id: params[:id])
-  
-      if power
-        if power.update(power_params)
-          render json: power
-        else
-          render json: { errors: power.errors.full_messages }, status: :unprocessable_entity
-        end
-      else
-        render json: { error: 'Power not found' }, status: :not_found
-      end
-    end
-  
-    private
-  
-    def power_params
-      params.permit(:description)
-    end
+  rescue ActionController::ParameterMissing => e
+    render json: { errors: ['validation errors'] }, status: :unprocessable_entity
+  end
+
+  private
+
+  def power_params
+    params.require(:power).permit(:description)
+  end
+
+  def handle_not_found
+    render json: { error: 'Power not found' }, status: :not_found
+  end
+
+  def handle_validation_error(exception)
+    render json: { errors: exception.record.errors.full_messages }, status: :unprocessable_entity
+  end
 end
-  

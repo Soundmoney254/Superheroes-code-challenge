@@ -3,7 +3,7 @@ class HeroSerializer < ActiveModel::Serializer
 
   has_many :powers
 
-  def powers
-    object.powers.select(:id, :name, :description)
-  end
+  # def powers
+  #   object.powers.select(:id, :name, :description)
+  # end
 end
