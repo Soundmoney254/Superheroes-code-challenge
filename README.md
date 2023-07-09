@@ -42,12 +42,6 @@ Starts the Rails server:
 rails server
 The API is now running on http://localhost:3000.
 
- 2. Clone the repo.
- 3. Open the repo files on your code editor.
- 4. Run ``` npm install ``` inside the app's root directory to install the dependancies.
- 5. Run the application on the terminal using ``` npm start ```
- 6. This will launch a browser tab with the app, make sure to clone and start the backend server api for the site to work fully.
-
 ## API Endpoints
 
 1.The Hero Powers API provides the following endpoints:
