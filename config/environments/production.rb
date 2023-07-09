@@ -2,8 +2,9 @@ require "active_support/core_ext/integer/time"
 
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
+  config.secret_key_base = 'a53bb0aa2bbbc6153aa05e6010d669c0e8d0825ddd19ec6c413b40df30685ada58e4746c8cee41c9d0baf2882aa02c08195f0b0c49ce21e0b618926161b2ee4c'
 
-  # Code is not reloaded between requests.
+  # Code is not reloaded between requests
   config.cache_classes = true
 
   # Eager load code on boot. This eager loads most of Rails and
