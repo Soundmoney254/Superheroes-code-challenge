@@ -1,5 +1,5 @@
 # Hero Powers -- API Backend
-The Hero Powers API Backend is a Ruby on Rails application that provides a centralized system for managing hero powers. It allows event managers in the music industry to efficiently organize and manage multiple heroes and their powers. With this API, event managers can track and search powers, update power information, add new powers, and obtain real-time power statistics.
+The Hero Powers API Backend is a Ruby on Rails application that provides a centralized system for managing hero powers. With this API one can add new powers, and obtain real-time power statistics.
 
 ## Built With:
 1. Ruby: Provides the base classes and logic for the application.
