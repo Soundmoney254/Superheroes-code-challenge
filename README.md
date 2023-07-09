@@ -8,6 +8,14 @@ The Hero Powers API Backend is a Ruby on Rails application that provides a centr
 4. PostgreSQL: A relational database management system used to store the data.
 
 ## Geting Started /Setup
+1. The project has already been deployed on render.com.  You can use this endpoint to access it 
+
+```sh
+https://superheroes-g59p.onrender.com
+
+```
+
+ ### Alternatively
 
 1. Clone the repo
 ```sh
