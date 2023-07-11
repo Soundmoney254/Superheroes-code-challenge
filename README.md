@@ -23,8 +23,10 @@ git clone git@github.com:Soundmoney254/Superheroes-code-challenge.git
  ```
 Navigate to the project directory:
 
-
+```sh
 cd hero-powers-api
+```
+
 Install the required dependencies:
 ```sh
 bundle install
